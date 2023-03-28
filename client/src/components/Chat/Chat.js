@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
@@ -10,7 +9,7 @@ import Input from '../Input/Input';
 import './Chat.css';
 import { useLocation } from "react-router";
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = "localhost:5000";
 
 let socket;
 
@@ -68,7 +67,6 @@ const Chat = () => {
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
-      <TextContainer users={users}/>
     </div>
   );
 }
